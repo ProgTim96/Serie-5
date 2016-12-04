@@ -9,79 +9,62 @@ public class MaximumVelocity extends ConsoleProgram {
 
 }
 
-class Vehicles{
+class Formula{
 
     public String Description;
 
     public double getMaximumVelocity(double P, double DENSITY, double A, double CW){
-        //Calculate Maximum Velcoity with ilearn-Formula
+        //Calculate Maximum Velocity with ilearn-Formula
         return Math.cbrt((2*P)/(DENSITY*A*CW))*3.6;
     }
 }
 
-class WaterVehicles extends Vehicles{
+class WaterVehicles extends Formula{
 
-    //Motorpower in Watt
     public double P;
+    //Motorkraft in Watt
     
-    //Front Surface
     public double A;
+    //Widerstand durch Oberfläche
     
-    //Water density
     public final int WATER_DENSITY = 1028;
+    //Wasserdichte (in der Aufgabenstellung festgelegt)
     
-    //coeffizent
-    public final double CW = 0.3;
+    public final double CW = 0.35;
+    //Koeffizient (in der Aufgabenstellung festgelegt
 
-    @Override
-    public double getMaximumVerlocity(double P, double DENSITY, double A, double CW) {
-        //Return Value from Superclass with Km/h to Knot calculation
-        return super.getMaximumVerlocity(P, WATER_DENSITY, A, CW)/1.85;
-    }
 }
 
-class LandVehicles extends Vehicles{
+class LandVehicles extends Formula{
 
-	//Motorpower
-	protected int P;
-	
-	//Front Window Size
+	protected int Ps;
+	//Motorkraft
+
 	private final double A = 2.5;
+	//Größe der Frontscheibe
 	
-	//Air density
-	private final double Air_Density = 1.3;
-	
-	//drag coeffizent
 	private final double CW = 0.35;
+	//Widerstands-Koeffizient
+	
+	private final double Air_Density = 1.3;
+	//Luftdichte
 	
 	public void Cars(int power){
-		this.P = power;
+		this.Ps = power;
 	}
 
 class Cars extends LandVehicles{
 
-    //Front Window Size
     public final double A = 2.5;
+    //Größe der Frontscheibe
 
-    public Cars(String description, int ps){
-
-        this.Description = description;
-        this.P = (int) (ps * 735.49875);
-
-    }
-
-    public double getMaximumVerlocity(){
-        return super.getMaximumVerlocity(P, Air_Density, A, CW);
-    }
-
-    public String getOutput(){
-        return Description + " (" + (int)(P/735.49875)+ " PS" + ")" + ": " + (int)this.getMaximumVerlocity() + "km/h";
-    }
+    int s = (int) 735.49875;
 
 }
 
 class Steamships extends WaterVehicles {
-
+	
+	
     public double displaceVolume;
     public double length;
 
@@ -96,14 +79,10 @@ class Steamships extends WaterVehicles {
     }
 
     public double getMaximumVerlocity() {
-        return super.getMaximumVerlocity(P, WATER_DENSITY, A, CW);
+        return super.getMaximumVelocity(P, WATER_DENSITY, A, CW);
     }
 
-    public String getOutput(){
-        return Description +" ("+ (int)(P/735.49875) + "PS, " + (int)displaceVolume + "m³, " + (int)length + "m): "
-                +(int)(this.getMaximumVerlocity()*1.85) + "Km/h ("+ (int)this.getMaximumVerlocity() + "kts)";
-    }
-}
+
 
 class RowingBoats extends WaterVehicles{
 
@@ -123,12 +102,7 @@ class RowingBoats extends WaterVehicles{
     }
 
     public double getMaximumVerlocity(){
-        return super.getMaximumVerlocity(P, WATER_DENSITY, A, CW);
-    }
-
-    public String getOutput(){
-        return Description + "(" + persons+ " rowers, b = " + width + ", a = " + draught + " ): "
-                + (int)(this.getMaximumVerlocity()*1.85) + "km/h (" + (int)getMaximumVerlocity() + "kts)";
+        return super.getMaximumVelocity(P, WATER_DENSITY, A, CW);
     }
 }
 
@@ -138,15 +112,16 @@ class Bicycles extends LandVehicles {
     public double b;
     public double cdA;
    
-        }
-    }
-
-  
-    public String getOutput(){
-		return null;
-
-
-    }
-
 }
+}
+}
+}
+    
+
+
+
+
+    
+
+
 
