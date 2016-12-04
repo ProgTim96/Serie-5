@@ -100,22 +100,40 @@ class RowingBoats extends WaterVehicles{
         this.draught =  draught;
 
     }
-
-    public double getMaximumVerlocity(){
-        return super.getMaximumVelocity(P, WATER_DENSITY, A, CW);
-    }
 }
 
 class Bicycles extends LandVehicles {
 
-    public double a;
-    public double b;
-    public double cdA;
+    public double p = 1.2;    
+}
+    
+class HandsonTop extends Bicycles { 
+	public double a = 277.376;
+    public double b = 3.078;
+    public double cdA = 0.4891;
+
    
 }
+
+class HandsonDrops extends Bicycles {
+    public double a = 399.611;
+    public double b = 4.4226;
+    public double cdA = 0.3397;
+}
+
+class Roadster extends Bicycles {
+	 public double a = 181.0455;
+     public double b = 3.3899;
+     public double cdA = 0.7457;
+}
+
+
+
+
 }
 }
 }
+
     
 
 
