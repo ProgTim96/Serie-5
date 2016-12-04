@@ -13,7 +13,7 @@ class Vehicles{
 
     public String Description;
 
-    public double getMaximumVerlocity(double P, double DENSITY, double A, double CW){
+    public double getMaximumVelocity(double P, double DENSITY, double A, double CW){
         //Calculate Maximum Velcoity with ilearn-Formula
         return Math.cbrt((2*P)/(DENSITY*A*CW))*3.6;
     }
