@@ -62,7 +62,7 @@ class LandVehicles extends Formula{
 	public void Cars(int power){
 		this.Ps = power;
 	}
-}
+
 class Cars extends LandVehicles{
 
     public final double A = 2.5;
@@ -75,24 +75,24 @@ class Cars extends LandVehicles{
 class Steamships extends WaterVehicles {
 	
 	
-    	public double displaceVolume;
-    	public double length;
+    public double displaceVolume;
+    public double length;
 
-    	public Steamships(String description, int ps, double displaceVolume, double length) {
+    public Steamships(String description, int ps, double displaceVolume, double length) {
 
         this.Description = description;
         this.displaceVolume = displaceVolume;
         this.length = length;
         this.P = ps * 735.49875;
         this.A = displaceVolume / length;
-	}
-}
 
+    }
+}  
 class RowingBoats extends WaterVehicles{
 
-    	public int persons;
-    	public double width;
-    	public double draught;
+    public int persons;
+    public double width;
+    public double draught;
 
     public RowingBoats(String description, int persons, double width, double draught){
 
@@ -108,39 +108,52 @@ class RowingBoats extends WaterVehicles{
 
 class Bicycles extends LandVehicles {
 
-    	public double p = 1.2;    
+    public double p = 1.2;    
 }
     
 class HandsonTop extends Bicycles { 
 	public double a = 277.376;
-    	public double b = 3.078;
-    	public double cdA = 0.4891;
+    public double b = 3.078;
+    public double cdA = 0.4891;
 
    
 }
 
 class HandsonDrops extends Bicycles {
-    	public double a = 399.611;
-    	public double b = 4.4226;
-    	public double cdA = 0.3397;
+    public double a = 399.611;
+    public double b = 4.4226;
+    public double cdA = 0.3397;
 }
 
 class Roadster extends Bicycles {
 	
 	 
-	public double a = 181.0455;
-     	public double b = 3.3899;
-     	public double cdA = 0.7457;
+	 public double a = 181.0455;
+     public double b = 3.3899;
+     public double cdA = 0.7457;
+   
+     
+
+
+
+
 }
 }
-}
-}
+
+
 
 
 
 
 
     
+
+
+
+
+    
+
+
 
 
 
