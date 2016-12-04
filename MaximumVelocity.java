@@ -62,7 +62,7 @@ class LandVehicles extends Formula{
 	public void Cars(int power){
 		this.Ps = power;
 	}
-
+}
 class Cars extends LandVehicles{
 
     public final double A = 2.5;
