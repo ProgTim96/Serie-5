@@ -85,7 +85,8 @@ class Steamships extends WaterVehicles {
         this.length = length;
         this.P = ps * 735.49875;
         this.A = displaceVolume / length;
-
+	}
+}
 
 class RowingBoats extends WaterVehicles{
 
