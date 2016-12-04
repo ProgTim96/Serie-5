@@ -6,6 +6,15 @@ public class MaximumVelocity extends ConsoleProgram {
 
 
     public void run() {
+    	
+    	 Cars VWPolo = new Car("VW Polo",45);
+         Cars Porsche911 = new Car("Porsche 911", 218);
+         Cars Lamborghini = new Car("Lamborghini Countach",454);
+         Steamship Titanic = new Steamship("HMS Titanic",51_000,45_000,269);
+         Steamship Nimitz = new Steamship("USS Nimitz", 280_000,80_000,332);
+         RowingBoats  = new RowingBoat("Greek Trireme",170,6.1,0.9);
+
+    }
 
 }
 
@@ -16,7 +25,7 @@ class Formula{
 
 	    public double getMaximumVelocity(double P, double DENSITY, double A, double CW){
 	    return Math.cbrt((2*P)/(DENSITY*A*CW))*3.6;
-	        
+	        //Berechnung der "Maximum Velocity" 
     }
 }
 
@@ -32,7 +41,7 @@ class WaterVehicles extends Formula{
     //Wasserdichte (in der Aufgabenstellung festgelegt)
     
     public final double CW = 0.35;
-    //Koeffizient (in der Aufgabenstellung festgelegt
+    //Koeffizient (in der Aufgabenstellung festgelegt)
 
 }
 
@@ -66,10 +75,10 @@ class Cars extends LandVehicles{
 class Steamships extends WaterVehicles {
 	
 	
-    public double displaceVolume;
-    public double length;
+    	public double displaceVolume;
+    	public double length;
 
-    public Steamships(String description, int ps, double displaceVolume, double length) {
+    	public Steamships(String description, int ps, double displaceVolume, double length) {
 
         this.Description = description;
         this.displaceVolume = displaceVolume;
@@ -121,12 +130,6 @@ class Roadster extends Bicycles {
 	public double a = 181.0455;
      	public double b = 3.3899;
      	public double cdA = 0.7457;
-   
-     
-
-
-
-
 }
 }
 }
@@ -146,11 +149,6 @@ class Roadster extends Bicycles {
 
 
 
-
-
-
-
-    
 
 
 
