@@ -16,7 +16,7 @@ class Formula{
 
 	    public double getMaximumVelocity(double P, double DENSITY, double A, double CW){
 	    return Math.cbrt((2*P)/(DENSITY*A*CW))*3.6;
-	        //Berechnung der "Maximum Velocity" mithilfe der
+	        
     }
 }
 
