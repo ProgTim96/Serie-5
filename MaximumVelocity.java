@@ -10,12 +10,13 @@ public class MaximumVelocity extends ConsoleProgram {
 }
 
 class Formula{
+	
 
-    public String Description;
+	 public String Description;
 
-    public double getMaximumVelocity(double P, double DENSITY, double A, double CW){
-        //Calculate Maximum Velocity with ilearn-Formula
-        return Math.cbrt((2*P)/(DENSITY*A*CW))*3.6;
+	    public double getMaximumVelocity(double P, double DENSITY, double A, double CW){
+	    return Math.cbrt((2*P)/(DENSITY*A*CW))*3.6;
+	        //Berechnung der "Maximum Velocity" mithilfe der
     }
 }
 
@@ -27,7 +28,7 @@ class WaterVehicles extends Formula{
     public double A;
     //Widerstand durch Oberfläche
     
-    public final int WATER_DENSITY = 1028;
+    public final int Water_DENSITY = 1028;
     //Wasserdichte (in der Aufgabenstellung festgelegt)
     
     public final double CW = 0.35;
@@ -46,7 +47,7 @@ class LandVehicles extends Formula{
 	private final double CW = 0.35;
 	//Widerstands-Koeffizient
 	
-	private final double Air_Density = 1.3;
+	private final double Air_DENSITY = 1.3;
 	//Luftdichte
 	
 	public void Cars(int power){
@@ -76,19 +77,12 @@ class Steamships extends WaterVehicles {
         this.P = ps * 735.49875;
         this.A = displaceVolume / length;
 
-    }
-
-    public double getMaximumVerlocity() {
-        return super.getMaximumVelocity(P, WATER_DENSITY, A, CW);
-    }
-
-
 
 class RowingBoats extends WaterVehicles{
 
-    public int persons;
-    public double width;
-    public double draught;
+    	public int persons;
+    	public double width;
+    	public double draught;
 
     public RowingBoats(String description, int persons, double width, double draught){
 
@@ -104,28 +98,31 @@ class RowingBoats extends WaterVehicles{
 
 class Bicycles extends LandVehicles {
 
-    public double p = 1.2;    
+    	public double p = 1.2;    
 }
     
 class HandsonTop extends Bicycles { 
 	public double a = 277.376;
-    public double b = 3.078;
-    public double cdA = 0.4891;
+    	public double b = 3.078;
+    	public double cdA = 0.4891;
 
    
 }
 
 class HandsonDrops extends Bicycles {
-    public double a = 399.611;
-    public double b = 4.4226;
-    public double cdA = 0.3397;
+    	public double a = 399.611;
+    	public double b = 4.4226;
+    	public double cdA = 0.3397;
 }
 
 class Roadster extends Bicycles {
-	 public double a = 181.0455;
-     public double b = 3.3899;
-     public double cdA = 0.7457;
-}
+	
+	 
+	public double a = 181.0455;
+     	public double b = 3.3899;
+     	public double cdA = 0.7457;
+   
+     
 
 
 
@@ -133,8 +130,22 @@ class Roadster extends Bicycles {
 }
 }
 }
+}
+
+
+
+
 
     
+
+
+
+
+    
+
+
+
+
 
 
 
