@@ -1,166 +1,55 @@
-import acm.program.*;
+package programming.set7.sudoku;
+
+public class Sudoku extends NumberBoard {
+
+private static final int rows = 9;
+private static final int columns = 9;
 
 
-public class MaximumVelocity extends ConsoleProgram {
-	
-
-
-    public void run() {
-    	
-    	 Cars VWPolo = new Car("VW Polo",45);
-         Cars Porsche911 = new Car("Porsche 911", 218);
-         Cars Lamborghini = new Car("Lamborghini Countach",454);
-         Steamship Titanic = new Steamship("HMS Titanic",51_000,45_000,269);
-         Steamship Nimitz = new Steamship("USS Nimitz", 280_000,80_000,332);
-         RowingBoats  = new RowingBoat("Greek Trireme",170,6.1,0.9);
-
-    }
-
-}
-
-class Formula{
-	
-
-	 public String Description;
-
-	    public double getMaximumVelocity(double P, double DENSITY, double A, double CW){
-	    return Math.cbrt((2*P)/(DENSITY*A*CW))*3.6;
-	        //Berechnung der "Maximum Velocity" 
-    }
-}
-
-class WaterVehicles extends Formula{
-
-    public double P;
-    //Motorkraft in Watt
-    
-    public double A;
-    //Widerstand durch Oberfläche
-    
-    public final int Water_DENSITY = 1028;
-    //Wasserdichte (in der Aufgabenstellung festgelegt)
-    
-    public final double CW = 0.35;
-    //Koeffizient (in der Aufgabenstellung festgelegt)
-
-}
-
-class LandVehicles extends Formula{
-
-	protected int Ps;
-	//Motorkraft
-
-	private final double A = 2.5;
-	//Größe der Frontscheibe
-	
-	private final double CW = 0.35;
-	//Widerstands-Koeffizient
-	
-	private final double Air_DENSITY = 1.3;
-	//Luftdichte
-	
-	public void Cars(int power){
-		this.Ps = power;
+	public Sudoku() {
+		super(9, 9);	
 	}
-
-class Cars extends LandVehicles{
-
-    public final double A = 2.5;
-    //Größe der Frontscheibe
-
-    int s = (int) 735.49875;
-
-}
-
-class Steamships extends WaterVehicles {
 	
+	//Erzeugt ein neues Board neun Zeilen und neun Spalten.
 	
-    public double displaceVolume;
-    public double length;
-
-    public Steamships(String description, int ps, double displaceVolume, double length) {
-
-        this.Description = description;
-        this.displaceVolume = displaceVolume;
-        this.length = length;
-        this.P = ps * 735.49875;
-        this.A = displaceVolume / length;
-
-    }
-}  
-class RowingBoats extends WaterVehicles{
-
-    public int persons;
-    public double width;
-    public double draught;
-
-    public RowingBoats(String description, int persons, double width, double draught){
-
-        this.Description = description;
-        this.P = persons * 100;
-        this.A = 0.5 * width * draught;
-        this.persons = persons;
-        this.width = width;
-        this.draught =  draught;
-
-    }
-}
-
-class Bicycles extends LandVehicles {
-
-    public double p = 1.2;    
-}
-    
-class HandsonTop extends Bicycles { 
-	public double a = 277.376;
-    public double b = 3.078;
-    public double cdA = 0.4891;
-
-   
-}
-
-class HandsonDrops extends Bicycles {
-    public double a = 399.611;
-    public double b = 4.4226;
-    public double cdA = 0.3397;
-}
-
-class Roadster extends Bicycles {
+	public void setValueAt(int row, int col, int value){
+		if ((value >0 && value <10) || (value == NumberBoard.EMPTY)) {
+			super.setValueAt(row, col, value);
+		}
+	}
 	
-	 
-	 public double a = 181.0455;
-     public double b = 3.3899;
-     public double cdA = 0.7457;
-   
-     
-
-
-
-
+	//Prüft Zeilen und Gitter seperat und gibt wenn beide gültig sind "true", andernfalls "false" aus.
+	
+	public boolean validRow(){
+		int[] row = new int[9];
+		for (int g = 0; g < row.length; g++) {
+			for (int i = 0; i < row.length; i++) {
+				row[i] = getValueAt(g , i);
+			} 
+			for (int v = 0; v < row.length; v++) {
+				for (int t = 0; t < row.length; t++) {
+					if (row[v] == row[t]){
+						return false;
+					}
+					
+				}
+			}
+		} 
+		return true;
+	}
+	
+	public boolean validCol(){
+		
+	}
+	
+	public boolean validGrid(){
+		
+	}
+	
+	public boolean isValid() {
+		return(validRow() && validCol() && validGrid());	
+	}
 }
-}
-
-
-
-
-
-
-
-    
-
-
-
-
-    
-
-
-
-
-
-
-    
-
-
 
 
 
